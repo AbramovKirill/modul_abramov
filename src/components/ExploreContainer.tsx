@@ -1,14 +1,18 @@
-import './ExploreContainer.css';
+import { IonButton, IonInput, IonItem, IonLabel } from '@ionic/react'
+import RenderItem from './RenderItem'
 
-interface ContainerProps { }
-
-const ExploreContainer: React.FC<ContainerProps> = () => {
+const ExploreContainer: React.FC = () => {
   return (
-    <div className="container">
-      <strong>Ready to create an app?</strong>
-      <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <div>
+      <IonItem>
+        <IonLabel position="floating" style={{ fontSize: '20px' }}>Кількість вольєрів:</IonLabel>
+        <IonInput type='number' id='number' value='1' />
+      </IonItem>
+      <IonButton expand="block" onClick={RenderItem}>
+        Результат
+      </IonButton>
     </div>
-  );
-};
+  )
+}
 
-export default ExploreContainer;
+export default ExploreContainer
